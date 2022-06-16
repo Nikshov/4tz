@@ -1,0 +1,25 @@
+{
+  "name": "4tz",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "jpg264": "node index.js",
+	"text": "node filter.js",
+	"exist": "node exist.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikshov/4tz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikshov/4tz/issues"
+  },
+  "homepage": "https://github.com/Nikshov/4tz#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.6"
+  }
+}
