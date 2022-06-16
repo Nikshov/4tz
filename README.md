@@ -1,2 +1,2 @@
 # 4tz
-## Запуск в консоли npm run start
+### Запуск из консоли `npm run start`
