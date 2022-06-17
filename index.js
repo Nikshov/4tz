@@ -4,16 +4,7 @@ import fs from 'fs';
 import screenshot from 'screenshot-desktop';
 const auth = argv[2];
 const folder = argv[3];
-function makeid(length) {
-  //Генератор ид, для уникальных имен.Стырил на стаковерфлоу, так как поленился написать вручную.
-  let result = '';
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-}
+
 function checkUniq(name) {
   try {
     const exists = fs.existsSync(`${name}.txt`);
@@ -23,7 +14,7 @@ function checkUniq(name) {
   }
 }
 function makeUniq() {
-  let id = makeid(9);
+  let id = Date.now();
   if (checkUniq(id)) makeUniq();
   else return id;
 }
