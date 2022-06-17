@@ -17,3 +17,7 @@ node_modules
 .gitattributes
 
 .env
+
+*.txt
+
+*.jpg
