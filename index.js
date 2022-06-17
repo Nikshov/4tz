@@ -1,6 +1,9 @@
+import { argv } from 'process';
 import fetch from 'node-fetch';
 import fs from 'fs';
 import screenshot from 'screenshot-desktop';
+const auth = argv[2];
+const folder = argv[3];
 function makeid(length) {
   //Генератор ид, для уникальных имен.Стырил на стаковерфлоу, так как поленился написать вручную.
   let result = '';
@@ -44,11 +47,11 @@ async function vision() {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: 'Api-Key AQVNyG8KKUYJzaAVX_sHfkffOyGk9Hig6fUi7Mky',
+      Authorization: `Api-Key ${auth}`,
       Accept: 'application/json',
     },
     body: JSON.stringify({
-      folderId: 'b1gjelpacu3it75nd6nq',
+      folderId: `${folder}`,
       analyze_specs: [
         {
           content: encoded,
