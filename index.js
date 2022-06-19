@@ -21,12 +21,12 @@ function makeUniq() {
 async function vision() {
   let id = makeUniq();
 
-  let scrn = await screenshot()
-    .then((img) => {
-      fs.writeFile(`${id}.jpg`, img, Buffer, function (err) {
-        console.log(err);
-      });
-      return img;
+  let scrn = await screenshot({filename: `${id}.png`,format: 'png',linuxLibrary: 'scrot'})
+    .then(() => {
+     /* fs.writeFile(`${id}.png`, img, Buffer, function (err) {
+        console.log(err); 
+      });*/
+      return fs.readFileSync(`${id}.png`);
     })
     .catch((err) => {
       console.log(err);
